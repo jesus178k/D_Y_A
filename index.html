@@ -2,23 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mi amor por ti</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html, body {
-      margin: 0;
-      padding: 0;
       font-family: 'Montserrat', sans-serif;
       background: url('fotografia.jpeg') no-repeat center center/cover;
       color: #4b004b;
       text-shadow: 1px 1px 2px #fff;
       height: 100%;
+      overflow-x: hidden;
     }
 
     .pantalla-inicial,
@@ -31,8 +32,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      animation: fadeIn 1.5s ease-in-out;
-      background-color: rgba(255, 228, 236, 0.8);
+      animation: fadeIn 1.2s ease-in-out;
+      background-color: rgba(255, 228, 236, 0.9);
       position: absolute;
       top: 0;
       left: 0;
@@ -43,6 +44,10 @@
 
     .pantalla-inicial { display: flex; z-index: 30; }
 
+    h1, h2 {
+      text-align: center;
+    }
+
     .pantalla-inicial h1,
     .carta h1,
     .final h2 {
@@ -51,26 +56,24 @@
       color: #d1006c;
       text-shadow: 2px 2px 10px #ff4d88;
       user-select: none;
-      text-align: center;
       margin-bottom: 20px;
     }
 
     .portada h2 {
       font-family: 'Dancing Script', cursive;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       background: #fff5f9;
       padding: 20px;
       border-radius: 20px;
       box-shadow: inset 0 0 10px #ffcce0;
-      line-height: 1.5;
+      line-height: 1.6;
       max-width: 90%;
-      text-align: center;
     }
 
     .mensaje,
     .mensaje-final {
-      font-size: 1.2rem;
-      line-height: 1.7;
+      font-size: 1.1rem;
+      line-height: 1.6;
       background: #ffffffcc;
       border-radius: 20px;
       padding: 20px;
@@ -78,7 +81,7 @@
       max-width: 90%;
       font-style: italic;
       color: #4b004b;
-      margin: 10px;
+      margin: 15px 0;
     }
 
     .btn-siguiente,
@@ -88,7 +91,7 @@
       color: white;
       padding: 14px 30px;
       border-radius: 40px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       border: none;
       cursor: pointer;
       box-shadow: 0 6px 15px rgba(209, 0, 108, 0.4);
@@ -126,13 +129,13 @@
       .pantalla-inicial h1,
       .carta h1,
       .final h2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
       .portada h2,
       .mensaje,
       .mensaje-final {
         font-size: 1rem;
-        padding: 15px;
+        padding: 16px;
       }
       .btn-siguiente,
       .btn-abrir {
@@ -170,11 +173,10 @@
 
 <!-- Portada -->
 <div class="portada" id="portada">
-  <h2>Amor:<br><br>
-      Tal vez no sepas el propósito de esta carta, pero la verdad es que yo tampoco lo sé. Solo quiero compartir contigo una parte de mí, que es cuando escucho ciertas canciones me hacen sentir algo muy inexplicable y que a trávez de las siguientes líenas te quiero hacer saber .
-      <br>
-       Te explico un poquito...
-    Cada canción tiene una descripción de como me hace sentir contigo y lo que vivo a trávez de ti , sobre todo todo lo que siento cuando las escucho, en el siguiente apartado encontrarás dos canciones las cuáles serán unas de las que me hacen sentir así 💘
+  <h2>
+    Amor:<br><br>
+    Tal vez no sepas el propósito de esta carta, pero la verdad es que yo tampoco lo sé. Solo quiero compartir contigo una parte de mí. Cuando escucho ciertas canciones, me hacen sentir algo inexplicable. A través de las siguientes líneas quiero hacértelo saber.<br><br>
+    Cada canción tiene una descripción de cómo me hace sentir contigo, lo que vivo a través de ti y todo lo que siento. En el siguiente apartado encontrarás dos canciones que me hacen sentir así 💘.
   </h2>
   <button class="btn-siguiente" onclick="mostrarCarta()">Siguiente</button>
 </div>
@@ -184,21 +186,20 @@
   <h1>Top Kevin Karl</h1>
   <div class="mensaje">
     1. <strong>"Te quiero tanto"</strong><br>
-         ¡¡Mi favorita ¡¡, que hace que te vea como en esta vida , en la anterior y la que sigue , que no te vea real , si no , como un sueño del que nunca me gustaría despertar, cada parte de ti , que anhelo y que me encanta , que te llevo a todos lados conmigo ,con cada acaricia tuya marcada en mi piel , cada mirada , cada risa , cada besoo, que llevaré en mi cuerpo y alma ."Te vi a los ojos bien" ,muestra una conexión que tuve contigo desde el primer día ,donde sabía que había encontrado ese lugar que me faltaba y que sin dudarlo te esperaría el tiempo que sea necesario, un reflejo de dos personas que pasaron por mucho y que pudieron con todo , porque en su amor hubo un cariño fiel y sincero y que sobre todo , ¡¡se amaban tanto!!... 
+    ¡¡Mi favorita!! Me hace verte como en esta vida, en la anterior y en la que sigue. No te veo real, sino como un sueño del que nunca quiero despertar. Cada parte de ti la anhelo y me encanta. Te llevo conmigo en cada caricia marcada en mi piel, cada mirada, cada risa, cada beso que llevaré en mi cuerpo y alma. "Te vi a los ojos bien" representa la conexión que tuvimos desde el primer día, cuando sentí que encontré ese lugar que me faltaba. Sin dudarlo, te esperaría el tiempo necesario. Nuestro amor es un reflejo de dos personas que pudieron con todo, porque hubo un cariño fiel y sincero. ¡¡Se amaban tanto!!
     <br><br>
     2. <strong>"Es que yo te quiero a ti"</strong><br>
-        En ella reflejo la sensibilidad de nuestro lazo, incluso a la distancia. Que puedo decir que pienso en ti todo el tiempo: en cada momento , desde el primer minuto de la mañana hasta el último segundo de la noche. Que cuando estamos juntas, se paraliza el mundo. Y que solo quiero mirarte a los ojos y estar cerca de ti . Que solo quiero cuidarte y hacerte sentir que eres lo único que quiero para mi vida, porque yo sólo ¡¡te quiero a ti!!
+    Refleja la sensibilidad de nuestro lazo, incluso a la distancia. Pienso en ti todo el tiempo: desde el primer minuto del día hasta el último segundo de la noche. Cuando estamos juntas, se paraliza el mundo. Solo quiero mirarte a los ojos, cuidarte y hacerte sentir que eres lo único que quiero en mi vida. Porque yo solo... ¡¡te quiero a ti!!
   </div>
   <button class="btn-siguiente" onclick="mostrarFinal()">Siguiente</button>
 </div>
 
-<!-- Mensaje final -->
+<!-- Final -->
 <div class="final" id="final">
-  <h2>Como último, amor:</h2>
+  <h2>Por último, amor:</h2>
   <p class="mensaje-final">
-         Epero que te haya gustado esto amor y  te quiero decir que no importa cuánto tiempo pase ni cuánta distancia exista, mi amor por ti es eterno.<br>
-      No solo te quiero, te admiro, te pienso, te elijo… cada día más., eres lo mejor que me a pasado  en la vida y agradezco cada momento desde que te conocí , te amooooo demasiadooo mi amor💘<br>
-
+    Espero que te haya gustado esto, amor. Quiero decirte que no importa cuánto tiempo pase ni cuánta distancia exista, mi amor por ti es eterno.<br>
+    No solo te quiero... te admiro, te pienso, te elijo cada día más. Eres lo mejor que me ha pasado y agradezco cada momento desde que te conocí. ¡Te amo demasiado, mi amor! 💘
   </p>
   <button class="btn-siguiente" onclick="cerrarTodo()">Cerrar 💌</button>
 </div>
@@ -234,7 +235,7 @@
 
   function cerrarTodo() {
     document.getElementById('final').style.display = 'none';
-    alert("Te amo infinitamente mi amorrr ❤️");
+    alert("Te amo infinitamente mi amor ❤️");
   }
 </script>
 
