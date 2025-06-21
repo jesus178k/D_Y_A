@@ -70,7 +70,22 @@
       max-width: 90%;
     }
 
-    .mensaje,
+    .mensaje {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background: #ffffffcc;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: inset 0 0 15px #ffd6e6;
+      max-width: 90%;
+      font-style: italic;
+      color: #4b004b;
+      margin: 15px 0;
+      max-height: 60vh;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
     .mensaje-final {
       font-size: 1.1rem;
       line-height: 1.6;
@@ -131,12 +146,18 @@
       .final h2 {
         font-size: 2.2rem;
       }
+
       .portada h2,
       .mensaje,
       .mensaje-final {
-        font-size: 1rem;
-        padding: 16px;
+        font-size: 0.95rem;
+        padding: 14px;
       }
+
+      .mensaje {
+        max-height: 55vh;
+      }
+
       .btn-siguiente,
       .btn-abrir {
         font-size: 1rem;
@@ -191,7 +212,8 @@
     2. <strong>"Es que yo te quiero a ti"</strong><br>
     Refleja la sensibilidad de nuestro lazo, incluso a la distancia. Pienso en ti todo el tiempo: desde el primer minuto del día hasta el último segundo de la noche. Cuando estamos juntas, se paraliza el mundo. Solo quiero mirarte a los ojos, cuidarte y hacerte sentir que eres lo único que quiero en mi vida. Porque yo solo... ¡¡te quiero a ti!!
   </div>
-  <button class="btn-siguiente" onclick="mostrarFinal()">Siguiente</button>
+  <div style="height: 10px;"></div>
+  <button class="btn-siguiente" style="margin-bottom: 20px;" onclick="mostrarFinal()">Siguiente</button>
 </div>
 
 <!-- Final -->
@@ -222,7 +244,7 @@
   function mostrarCarta() {
     document.getElementById('portada').style.display = 'none';
     document.getElementById('carta').style.display = 'flex';
-    musica.currentTime = 1 * 60 + 50;
+    musica.currentTime = 110; // 1:50
     musica.play().catch(() => {});
     tiempoAudio.style.display = 'block';
   }
