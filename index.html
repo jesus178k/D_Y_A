@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi amor por ti</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: url('fotografia.jpeg') no-repeat center center/cover;
+      color: #4b004b;
+      text-shadow: 1px 1px 2px #fff;
+      height: 100%;
+    }
+
+    .pantalla-inicial,
+    .portada,
+    .carta,
+    .final {
+      height: 100vh;
+      width: 100vw;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1.5s ease-in-out;
+      background-color: rgba(255, 228, 236, 0.8);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .pantalla-inicial { display: flex; z-index: 30; }
+
+    .pantalla-inicial h1,
+    .carta h1,
+    .final h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #d1006c;
+      text-shadow: 2px 2px 10px #ff4d88;
+      user-select: none;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .portada h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      background: #fff5f9;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: inset 0 0 10px #ffcce0;
+      line-height: 1.5;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .mensaje,
+    .mensaje-final {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      background: #ffffffcc;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: inset 0 0 15px #ffd6e6;
+      max-width: 90%;
+      font-style: italic;
+      color: #4b004b;
+      margin: 10px;
+    }
+
+    .btn-siguiente,
+    .btn-abrir {
+      margin-top: 20px;
+      background-color: #ff69b4;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(209, 0, 108, 0.4);
+      transition: 0.3s ease;
+      user-select: none;
+    }
+
+    .btn-siguiente:hover,
+    .btn-abrir:hover {
+      background-color: #d1006c;
+    }
+
+    .corazon {
+      position: fixed;
+      color: #ff4d88;
+      font-size: 20px;
+      animation: flotar 10s linear infinite;
+      opacity: 0.4;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(100vh) scale(1); opacity: 0; }
+      50% { opacity: 0.6; }
+      100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 480px) {
+      .pantalla-inicial h1,
+      .carta h1,
+      .final h2 {
+        font-size: 2.5rem;
+      }
+      .portada h2,
+      .mensaje,
+      .mensaje-final {
+        font-size: 1rem;
+        padding: 15px;
+      }
+      .btn-siguiente,
+      .btn-abrir {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<audio id="musica" preload="auto">
+  <source src="te quiero tanto.mp3" type="audio/mpeg" />
+  Tu navegador no soporta audio HTML5.
+</audio>
+<div id="tiempoAudio" style="display:none; position: fixed; bottom: 10px; right: 20px; color: white; font-weight: bold;"></div>
+
+<script>
+  for (let i = 0; i < 25; i++) {
+    const corazon = document.createElement('div');
+    corazon.classList.add('corazon');
+    corazon.textContent = '💘';
+    corazon.style.left = `${Math.random() * 100}vw`;
+    corazon.style.animationDuration = `${6 + Math.random() * 6}s`;
+    corazon.style.fontSize = `${16 + Math.random() * 30}px`;
+    document.body.appendChild(corazon);
+  }
+</script>
+
+<!-- Pantalla Inicial -->
+<div class="pantalla-inicial" id="pantallaInicial">
+  <h1>Abre la carta amor 💌</h1>
+  <button class="btn-abrir" onclick="mostrarPortada()">Abrir</button>
+</div>
+
+<!-- Portada -->
+<div class="portada" id="portada">
+  <h2>Amor:<br><br>
+      Tal vez no sepas el propósito de esta carta, pero la verdad es que yo tampoco lo sé. Solo quiero compartir contigo una parte de mí, que es cuando escucho ciertas canciones me hacen sentir algo muy inexplicable y que a trávez de las siguientes líenas te quiero hacer saber .
+      <br>
+       Te explico un poquito...
+    Cada canción tiene una descripción de como me hace sentir contigo y lo que vivo a trávez de ti , sobre todo todo lo que siento cuando las escucho, en el siguiente apartado encontrarás dos canciones las cuáles serán unas de las que me hacen sentir así 💘
+  </h2>
+  <button class="btn-siguiente" onclick="mostrarCarta()">Siguiente</button>
+</div>
+
+<!-- Carta -->
+<div class="carta" id="carta">
+  <h1>Top Kevin Karl</h1>
+  <div class="mensaje">
+    1. <strong>"Te quiero tanto"</strong><br>
+         ¡¡Mi favorita ¡¡, que hace que te vea como en esta vida , en la anterior y la que sigue , que no te vea real , si no , como un sueño del que nunca me gustaría despertar, cada parte de ti , que anhelo y que me encanta , que te llevo a todos lados conmigo ,con cada acaricia tuya marcada en mi piel , cada mirada , cada risa , cada besoo, que llevaré en mi cuerpo y alma ."Te vi a los ojos bien" ,muestra una conexión que tuve contigo desde el primer día ,donde sabía que había encontrado ese lugar que me faltaba y que sin dudarlo te esperaría el tiempo que sea necesario, un reflejo de dos personas que pasaron por mucho y que pudieron con todo , porque en su amor hubo un cariño fiel y sincero y que sobre todo , ¡¡se amaban tanto!!... 
+    <br><br>
+    2. <strong>"Es que yo te quiero a ti"</strong><br>
+        En ella reflejo la sensibilidad de nuestro lazo, incluso a la distancia. Que puedo decir que pienso en ti todo el tiempo: en cada momento , desde el primer minuto de la mañana hasta el último segundo de la noche. Que cuando estamos juntas, se paraliza el mundo. Y que solo quiero mirarte a los ojos y estar cerca de ti . Que solo quiero cuidarte y hacerte sentir que eres lo único que quiero para mi vida, porque yo sólo ¡¡te quiero a ti!!
+  </div>
+  <button class="btn-siguiente" onclick="mostrarFinal()">Siguiente</button>
+</div>
+
+<!-- Mensaje final -->
+<div class="final" id="final">
+  <h2>Como último, amor:</h2>
+  <p class="mensaje-final">
+         Epero que te haya gustado esto amor y  te quiero decir que no importa cuánto tiempo pase ni cuánta distancia exista, mi amor por ti es eterno.<br>
+      No solo te quiero, te admiro, te pienso, te elijo… cada día más., eres lo mejor que me a pasado  en la vida y agradezco cada momento desde que te conocí , te amooooo demasiadooo mi amor💘<br>
+
+  </p>
+  <button class="btn-siguiente" onclick="cerrarTodo()">Cerrar 💌</button>
+</div>
+
+<script>
+  const musica = document.getElementById('musica');
+  const tiempoAudio = document.getElementById('tiempoAudio');
+
+  musica.addEventListener('timeupdate', () => {
+    const min = Math.floor(musica.currentTime / 60);
+    const sec = Math.floor(musica.currentTime % 60).toString().padStart(2, '0');
+    tiempoAudio.textContent = `⏱ ${min}:${sec}`;
+  });
+
+  function mostrarPortada() {
+    document.getElementById('pantallaInicial').style.display = 'none';
+    document.getElementById('portada').style.display = 'flex';
+  }
+
+  function mostrarCarta() {
+    document.getElementById('portada').style.display = 'none';
+    document.getElementById('carta').style.display = 'flex';
+    musica.currentTime = 1 * 60 + 50;
+    musica.play().catch(() => {});
+    tiempoAudio.style.display = 'block';
+  }
+
+  function mostrarFinal() {
+    document.getElementById('carta').style.display = 'none';
+    document.getElementById('final').style.display = 'flex';
+    tiempoAudio.style.display = 'none';
+  }
+
+  function cerrarTodo() {
+    document.getElementById('final').style.display = 'none';
+    alert("Te amo infinitamente mi amorrr ❤️");
+  }
+</script>
+
+</body>
+</html>
